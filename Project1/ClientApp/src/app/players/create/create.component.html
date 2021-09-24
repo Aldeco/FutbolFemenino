@@ -3,7 +3,7 @@
     <br />
     <div class="row">
       <div class="col">
-        <h3 style="font-family:'! PEPSI !'">Agregar jugadora</h3>
+        <h2>Agregar jugadora</h2>
       </div>
       <div class="col text-right">
         <a href="#" routerLink="/players/list" class="btn btn-secondary btn-lg btn-warning">Volver a jugadoras</a>
@@ -19,7 +19,6 @@
                type="text"
                class="form-control" />
       </div>
-
       <div class="form-group">
         <label for="apellido">Apellido:</label>
         <input formControlName="apellido"
@@ -34,6 +33,9 @@
                id="dni"
                type="text"
                class="form-control" />
+        <div class="alert alert-danger" *ngIf="createForm.controls['dni'].errors?.dniExists">
+          <strong>DNI en uso.</strong>
+        </div>
       </div>
 
       <div class="form-group">
@@ -46,8 +48,12 @@
             {{team.nombre}}
           </option>
         </select>
+        <div class="alert alert-danger" *ngIf="createForm.controls['teamId'].errors?.teamFull">
+          <strong>El equipo no puede tener mas de 11 jugadoras</strong>
+        </div>
       </div>
-      <button class="btn btn-primary btn-lg btn-danger" type="submit" [disabled]="!createForm.valid" style="width: 1111px">AGREGAR</button>
+
+      <button class="btn btn-primary btn-lg btn-danger" style="width: 1111px" type="submit" [disabled]="!createForm.valid">Agregar</button>
     </form>
   </div>
 </body>

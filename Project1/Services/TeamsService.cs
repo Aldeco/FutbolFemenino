@@ -18,11 +18,6 @@ namespace Project1.Services
         }
         public async Task<Team> CreateTeam(Team team)
         {
-            Team existingTeam = await _context.Teams.Where(t => t.Nombre == team.Nombre).FirstOrDefaultAsync();
-            if (existingTeam != null)
-            {
-                return null;
-            }
             _context.Teams.Add(team);
             await _context.SaveChangesAsync();
             return team;

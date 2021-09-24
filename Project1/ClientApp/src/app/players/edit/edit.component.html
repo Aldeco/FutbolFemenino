@@ -1,58 +1,56 @@
-<body>
-  <div class="container">
-    <br />
-    <div class="row">
-      <div class="col">
-        <h3 style="font-family: '! PEPSI !'">Editar jugadora</h3>
-      </div>
-      <div class="col text-right">
-        <a href="#" routerLink="/players/list" class="btn btn-secondary btn-lg btn-warning">Volver a jugadoras</a>
-      </div>
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col">
+      <h3>Editar jugadora</h3>
     </div>
-    <br />
-    <form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm)">
-
-      <input formControlName="id"
-             id="id"
-             type="hidden" />
-
-      <div class="form-group">
-        <label for="nombre">Nombre:</label>
-        <input formControlName="nombre"
-               id="nombre"
-               type="text"
-               class="form-control" />
-      </div>
-
-      <div class="form-group">
-        <label for="apellido">Apellido:</label>
-        <input formControlName="apellido"
-               id="apellido"
-               type="text"
-               class="form-control" />
-      </div>
-
-      <div class="form-group">
-        <label for="dni">DNI:</label>
-        <input formControlName="dni"
-               id="dni"
-               type="text"
-               class="form-control" />
-      </div>
-
-      <div class="form-group">
-        <label for="name">Equipo:</label>
-        <select formControlName="teamId"
-                id="teamId"
-                class="form-control">
-          <option value="">- Seleccionar -</option>
-          <option *ngFor="let team of teams" [ngValue]="team.id">
-            {{team.nombre}}
-          </option>
-        </select>
-      </div>
-
-      <button class="btn btn-secondary btn-lg btn-danger" style="width: 1111px" type="submit" [disabled]="!editForm.valid">ACTUALIZAR</button>
-    </form>
+    <div class="col text-right">
+      <a href="#" routerLink="/players/list" class="btn btn-secondary btn-lg btn-warning">Volver a jugadoras</a>
+    </div>
   </div>
-</body>
+  <br />
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm)">
+
+    <input formControlName="id"
+           id="id"
+           type="hidden" />
+
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input formControlName="nombre"
+             id="nombre"
+             type="text"
+             class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="apellido">Apellido:</label>
+      <input formControlName="apellido"
+             id="apellido"
+             type="text"
+             class="form-control" />
+    </div>
+
+    <div class="form-group">
+     <!--<label for="dni">DNI:</label>-->
+     <input formControlName="dni"
+             id="dni"
+             type="hidden"
+             class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="name">Equipo:</label>
+      <select formControlName="teamId"
+              id="teamId"
+              class="form-control">
+        <option value="">- Seleccionar -</option>
+        <option *ngFor="let team of teams" [ngValue]="team.id">
+          {{team.nombre}}
+        </option>
+      </select>
+    </div>
+
+    <button class="btn btn-secondary btn-lg btn-danger" style="width:1111px" type="submit" [disabled]="!editForm.valid">Actualizar</button>
+  </form>
+</div>

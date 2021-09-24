@@ -6,12 +6,9 @@ import { ListComponent } from './list/list.component';
 import { DetailsComponent } from './details/details.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavPlayerComponent } from './nav-player/nav-player.component';
 
-
-//import { NavMenuComponent } from 'src/app/nav-menu/nav-menu.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ListComponent, DetailsComponent, CreateComponent, EditComponent, NavPlayerComponent],

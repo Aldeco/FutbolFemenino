@@ -48,14 +48,8 @@ namespace Project1.Controllers
         public async Task<ActionResult<Player>> Post(Player player)
         {
 
-            if ((await _playerService.CreatePlayer(player)) == null)
-            {
-                return BadRequest("El DNI debe ser unico.");
-            }
-            else
-            {
-                return CreatedAtAction("Post", new { id = player.Id }, player);
-            }
+            await _playerService.CreatePlayer(player);
+            return CreatedAtAction("Post", new { id = player.Id }, player);
         }
 
         // PUT: api/Players/5

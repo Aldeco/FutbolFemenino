@@ -1,11 +1,10 @@
 <app-nav-player></app-nav-player>
-
 <body>
   <div class="container">
     <br />
     <div class="row">
       <div class="col">
-        <h2>Jugadoras registradas</h2>
+        <h2 style="font-family:'! PEPSI !'">Jugadoras registradas</h2>
       </div>
       <div class="col text-right">
         <a href="#" routerLink="/players/create/" class="btn btn-secondary btn-lg btn-warning">Agregar jugadora</a>
@@ -20,15 +19,15 @@
           <th>Apellido</th>
           <th>DNI</th>
           <th>Equipo</th>
-          <th width="200px"></th>
+          <th width="161px"></th>
         </tr>
       </thead>
       <tr *ngFor="let player of players">
         <td style="text-align:center;">{{ player.id }}</td>
-        <td style="text-align:justify;">{{ player.nombre }}</td>
-        <td style="text-align:justify;">{{ player.apellido }}</td>
-        <td style="text-align:center;">{{ player.dni }}</td>
-        <td style="text-align:center;">{{ player.team?.nombre }}</td>
+        <td>{{ player.nombre }}</td>
+        <td>{{ player.apellido }}</td>
+        <td>{{ player.dni }}</td>
+        <td>{{ player.team?.nombre }}</td>
         <td class="text-right">
           <a href="#" [routerLink]="['/players/', player.id, 'details']" class="btn btn-info btn-sm">Ver</a>
           <a href="#" [routerLink]="['/players/', player.id, 'edit']" class="btn btn-primary btn-sm">Editar</a>
@@ -38,4 +37,3 @@
     </table>
   </div>
 </body>
-

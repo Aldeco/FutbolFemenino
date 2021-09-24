@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
+import { nameValidator } from '../../validators/name-validator';
 import { TeamsService } from '../teams.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { TeamsService } from '../teams.service';
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css']
 })
-export class CreateComponent implements OnInit {
+export class CreateComponent {
 
   createForm;
   nameError: boolean;
@@ -21,20 +22,17 @@ export class CreateComponent implements OnInit {
     private formBuilder: FormBuilder
   ) {
     this.createForm = this.formBuilder.group({
-      nombre: ['', Validators.required],
+      nombre: ['', {
+        validators: [Validators.required],
+        asyncValidators: [nameValidator(this.teamsService)], updateOn: 'blur'
+      }],
       colorCamiseta: ['', Validators.required],
     });
-  }
-
-  ngOnInit() {
-    this.nameError = false;
   }
 
   onSubmit(formData) {
     this.teamsService.createTeam(formData.value).subscribe(res => {
       this.router.navigateByUrl('teams/list');
-    }, err => {
-      this.nameError = true;
     });
   }
 }

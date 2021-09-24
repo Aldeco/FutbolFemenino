@@ -18,11 +18,6 @@ namespace Project1.Services
         }
         public async Task<Player> CreatePlayer(Player player)
         {
-            Player existingDni = await _context.Players.Where(p => p.Dni == player.Dni).FirstOrDefaultAsync();
-            if(existingDni != null)
-            {
-                return null;
-            }
             _context.Players.Add(player);
             await _context.SaveChangesAsync();
             return player;

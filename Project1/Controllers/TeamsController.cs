@@ -44,10 +44,7 @@ namespace Project1.Controllers
         [HttpPost]
         public async Task<ActionResult<Team>> Post(Team team)
         {
-            if(await _teamService.CreateTeam(team) == null)
-            {
-                return BadRequest("El nombre debe ser unico.");
-            }
+            await _teamService.CreateTeam(team);
             return CreatedAtAction("Post", new { id = team.Id }, team);
         }
 

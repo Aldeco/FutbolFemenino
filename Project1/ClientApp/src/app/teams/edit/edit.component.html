@@ -1,38 +1,36 @@
-<body>
-  <div class="container">
-    <br />
-    <div class="row">
-      <div class="col">
-        <h3 style="font-family: '! PEPSI !'">Editar equipo</h3>
-      </div>
-      <div class="col text-right">
-        <a href="#" routerLink="/teams/list" class="btn btn-secondary btn-lg btn-warning">Volver a equipos</a>
-      </div>
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col">
+      <h3>Editar equipo</h3>
     </div>
-    <br />
-    <form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm)">
-
-      <input formControlName="id"
-             id="id"
-             type="hidden" />
-
-      <div class="form-group">
-        <label for="nombre">Nombre:</label>
-        <input formControlName="nombre"
-               id="nombre"
-               type="text"
-               class="form-control" />
-      </div>
-
-      <div class="form-group">
-        <label for="colorCamiseta">Color:</label>
-        <input formControlName="colorCamiseta"
-               id="colorCamiseta"
-               type="text"
-               class="form-control" />
-      </div>
-
-      <button class="btn btn-secondary btn-lg btn-danger" style="width: 1111px" type="submit" [disabled]="!editForm.valid">Actualizar</button>
-    </form>
+    <div class="col text-right">
+      <a href="#" routerLink="/teams/list" class="btn btn-secondary btn-sm">Volver a equipos</a>
+    </div>
   </div>
-</body>
+  <br />
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm)">
+
+    <input formControlName="id"
+           id="id"
+           type="hidden" />
+
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input formControlName="nombre"
+             id="nombre"
+             type="text"
+             class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="colorCamiseta">Color:</label>
+      <input formControlName="colorCamiseta"
+             id="colorCamiseta"
+             type="text"
+             class="form-control" />
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!editForm.valid">Actualizar</button>
+  </form>
+</div>

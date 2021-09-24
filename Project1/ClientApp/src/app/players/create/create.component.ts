@@ -2,6 +2,8 @@ import { Component, ErrorHandler, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
+import { dniValidator } from 'src/app/validators/dni-validator';
+import { teamValidator } from 'src/app/validators/team-validator';
 import { Team } from "../../teams/team";
 import { TeamsService } from '../../teams/teams.service';
 import { Player } from '../player';
@@ -17,8 +19,6 @@ export class CreateComponent implements OnInit {
 
   teams: Team[] = [];
   createForm;
-  dniError: boolean;
-  maxplayers: boolean;
 
   constructor(
     public playersService: PlayersService,
@@ -30,8 +30,14 @@ export class CreateComponent implements OnInit {
     this.createForm = this.formBuilder.group({
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
-      dni: ['', Validators.required],
-      teamId: ['', Validators.required],
+      dni: ['', {
+        validators: [Validators.required],
+        asyncValidators: [dniValidator(this.playersService)], updateOn: 'blur'
+      }],
+      teamId: ['', {
+        validators: [Validators.required],
+        asyncValidators: [teamValidator(this.playersService)], updateOn: 'blur'
+      }],
     });
   }
 
@@ -39,15 +45,12 @@ export class CreateComponent implements OnInit {
     this.teamsService.getTeams().subscribe((data: Team[]) => {
       this.teams = data;
     });
-    this.dniError = false;
-    this.maxplayers = false;
   }
 
   onSubmit(formData) {
     this.playersService.createPlayer(formData.value).subscribe(res => {
       this.router.navigateByUrl('players/list');
-    }, err => {
-      this.dniError = true;
-    });
-  } 
+    }
+    );
+  }
 }
