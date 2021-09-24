@@ -1,0 +1,48 @@
+body {
+  height: 100%;
+  background-color: #000000;
+  background: url(fondo.png), linear-gradient(to left, #424242, #353535);
+}
+
+p {
+  font-size: 22px;
+  font-family: cursive;
+}
+
+h1 {
+  font-family: '! PEPSI !';
+  color: white;
+  text-align: center;
+  /*text-decoration: underline;*/
+  font-style: italic;
+  font-size: 70px;
+  text-shadow: 4px 4px 4px rgb(77, 6, 6);
+  letter-spacing: 20px;
+  height: 100px;
+  width: 750px;
+  color: white;
+  margin: 5px 500px;
+  padding: 10px 25px;
+  border-radius: 35px 0px 35px 0px;
+  -moz-border-radius: 35px 0px 35px 0px;
+  -webkit-border-radius: 35px 0px 35px 0px;
+  border: 2px solid rgb(255, 255, 255);
+  display: inline-block;
+  /*text-indent: 40px;*/
+}
+
+.caja {
+  font-size: 22px;
+  font-family: cursive;
+  height: 170px;
+  width: 600px;
+  color: white;
+  background: rgb(39, 39, 39);
+  margin: 30px 580px;
+  padding: 15px;
+  border-radius: 35px 0px 35px 0px;
+  -moz-border-radius: 35px 0px 35px 0px;
+  -webkit-border-radius: 35px 0px 35px 0px;
+  border: 2px solid rgb(77,6,6);
+  display: inline-block;
+}

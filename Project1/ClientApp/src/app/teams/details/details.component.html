@@ -1,0 +1,41 @@
+<body>
+  <div class="container">
+    <br />
+    <h3 style="font-family:'! PEPSI !'">Detalles del equipo</h3>
+    <br />
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col">
+            <h4 style="text-align:justify; font-size: 40px">{{ team.nombre }}</h4>
+          </div>
+          <div class="col text-right">
+            <a href="#" routerLink="/teams/list" class="btn btn-secondary btn-lg btn-warning">Volver a lista de equipos</a>
+          </div>
+        </div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><b>ID:</b> {{ team.id }}</li>
+        <li class="list-group-item"><b>Nombre:</b> {{ team.nombre }}</li>
+        <li class="list-group-item"><b>Color:</b> {{ team.colorCamiseta }}</li>
+      </ul>
+    </div>
+    <table class="table table-bordered table-sm table-danger">
+      <tr>
+        <th class="table-dark">ID</th>
+        <th class="table-dark">Nombre</th>
+        <th class="table-dark">Apellido</th>
+        <th class="table-dark">DNI</th>
+      </tr>
+      <tr *ngFor="let player of players">
+        <ng-container *ngIf="player.teamId == team.id">
+          <td>{{ player.id }}</td>
+          <td>{{ player.nombre }}</td>
+          <td>{{ player.apellido }}</td>
+          <td>{{ player.dni }}</td>
+        </ng-container>
+      </tr>
+    </table>
+  </div>
+</body>
+

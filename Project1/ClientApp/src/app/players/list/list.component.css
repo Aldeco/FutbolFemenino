@@ -1,0 +1,9 @@
+body {
+  height: 500%;
+  background: url(fondo.png);
+}
+
+h2 {
+  text-align: center;
+  font-family: '! PEPSI !';
+}

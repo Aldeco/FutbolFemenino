@@ -1,0 +1,37 @@
+<header>
+  <!--  border-bottom box-shadow mb-0 -->
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['home']">
+        <img src="../../../assets/img/pelota4.png" width="30" height="20">
+        Campeonato Femenino de Fútbol
+        <img src="../../../assets/img/pelota4.png" width="30" height="20">
+      </a>
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              aria-label="Toggle navigation"
+              [attr.aria-expanded]="isExpanded"
+              (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+           [ngClass]="{ show: isExpanded }">
+        <ul class="nav nav-pills nav-fill">
+          <li class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link active" style="background-color: rgb(209, 44, 44); color: white; " [routerLink]="['/home']">Inicio</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link active" style="background-color: rgb(209, 44, 44); color: white;" [routerLink]="['/players']">Jugadoras</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link active" style="background-color: rgb(209, 44, 44); color: white;" [routerLink]="['/teams']">Equipos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

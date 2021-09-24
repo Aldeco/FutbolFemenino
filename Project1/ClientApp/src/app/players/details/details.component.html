@@ -1,0 +1,26 @@
+<body>
+  <div class="container">
+    <br />
+    <h3 style="font-family:'! PEPSI !'">Ficha de la jugadora</h3>
+    <br />
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col">
+            <h4 style="text-align:justify; font-size: 40px">{{ player.apellido }}</h4>
+          </div>
+          <div class="col text-right">
+            <a href="#" routerLink="/players/list" class="btn btn-secondary btn-lg btn-danger">Volver a lista de jugadoras</a>
+          </div>
+        </div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><b>ID:</b> {{ player.id }}</li>
+        <li class="list-group-item"><b>Nombre:</b> {{ player.nombre }}</li>
+        <li class="list-group-item"><b>Apellido:</b> {{ player.apellido }}</li>
+        <li class="list-group-item"><b>DNI:</b> {{ player.dni }}</li>
+        <li class="list-group-item"><b>Team:</b> {{ player.team?.nombre }}</li>
+      </ul>
+    </div>
+  </div>
+</body>
