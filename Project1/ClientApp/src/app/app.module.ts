@@ -8,8 +8,6 @@ import { TeamsModule } from './teams/teams.module';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ListComponent } from "./players/list/list.component";
 import { TeamListComponent } from "./teams/team-list/team-list.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,8 +30,6 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     LoginComponent
   ],
   imports: [
@@ -55,10 +51,8 @@ import { LoginComponent } from './login/login.component';
     RouterModule.forRoot([
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
-      { path: 'counter', component: CounterComponent },
       { path: 'login', component: LoginComponent },
       //{ path: '**', component: LoginComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'players', component: ListComponent },
       { path: 'teams', component: TeamListComponent },
     ]),
