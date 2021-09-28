@@ -13,3 +13,11 @@ Dato importante para probarlo:
 
 Usuario: martinezr
 Contraseña: 123
+
+
+Swagger generado en .NET5
+![alt text](https://i.imgur.com/Ux0ERl0.png)
+
+Link de video de la aplicación en uso:
+https://www.youtube.com/watch?v=zpElgS-0_Qo
+
